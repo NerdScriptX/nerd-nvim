@@ -4,7 +4,9 @@ return {
 	config = function()
 		require("gitsigns").setup()
 
-		vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-		vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blabe<CR>", {})
+    local opts = { noremap = true, silent = true }
+
+		vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
+		vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blabe<CR>", opts)
 	end,
 }

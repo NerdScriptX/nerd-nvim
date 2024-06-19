@@ -20,7 +20,7 @@ return {
     require("telescope").load_extension("ui-select")
 
     -- Key mappings
-    vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
+    vim.keymap.set('n', '<C-p>', builtin.find_files, { noremap = true, silent = true})
+    vim.keymap.set('n', '<leader>fw', builtin.live_grep, { noremap = true, silent = true})
   end
 }

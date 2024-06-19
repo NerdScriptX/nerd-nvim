@@ -26,3 +26,11 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
+-- Open compiler
+vim.keymap.set("n", "<F5>", "<cmd>CompilerOpen<cr>", opts)
+
+-- Redo last selected option
+vim.keymap.set("n", "<S-F5>", "<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>", opts)
+
+-- Toggle compiler results
+vim.keymap.set("n", "<S-F6>", "<cmd>CompilerToggleResults<cr>", opts)
