@@ -11,7 +11,7 @@ return {
 			},
 
 			-- Key mappings
-			vim.keymap.set("n", "<leader>s", require("auto-session.session-lens").search_session, { noremap = true }),
+			vim.keymap.set("n", "<leader>S", require("auto-session.session-lens").search_session, { noremap = true }),
 		})
 	end,
 }
