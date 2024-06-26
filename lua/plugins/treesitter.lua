@@ -6,7 +6,10 @@ return {
     config.setup({
       ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "query", "javascript", "typescript", "tsx" },
       auto_install = true,
-      highligh = { enable = true },
+      highligh = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
       indent = { enable = true },
     })
   end
