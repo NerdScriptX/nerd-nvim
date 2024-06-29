@@ -4,7 +4,13 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    require("everforest").setup({})
+    require("everforest").setup({
+      diagnostic_text_highlight = true,
+      diagnostic_line_highlight = true,
+      spell_foreground = true,
+      float_style = "dim",
+      inlay_hints_background = "dimmed",
+    })
 
     vim.cmd([[colorscheme everforest]])
   end,

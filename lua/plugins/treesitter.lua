@@ -4,13 +4,19 @@ return {
   config = function()
     local config = require("nvim-treesitter.configs")
     config.setup({
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "query", "javascript", "typescript", "tsx" },
+      ensure_installed = { "c", "lua", "vim", "vimdoc", "bash", "markdown", "query", "javascript", "typescript", "tsx" },
       auto_install = true,
-      highligh = {
+      highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
       indent = { enable = true },
+      autopairs = {
+        enable = true
+      },
+      autotag = {
+        enable = true
+      },
     })
   end
 }

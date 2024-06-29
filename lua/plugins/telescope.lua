@@ -15,7 +15,15 @@ return {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown {}
         }
-      }
+      },
+      file_ignore_patterns = {
+        "node_modules",
+        "yarn.lock",
+        ".git",
+        ".sl",
+        "_build",
+        ".next",
+      },
     })
     require("telescope").load_extension("ui-select")
 
