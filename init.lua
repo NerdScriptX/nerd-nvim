@@ -1,6 +1,7 @@
 -- Base Configuration
 require("core.mappings")
 require("core.options")
+require("core.highlight-yank")
 
 -- Lazy Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

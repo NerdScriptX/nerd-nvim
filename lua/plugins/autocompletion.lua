@@ -1,6 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
-  event = { "InsertEnter", "BufReadPost", "BufNewFile"},
+  event = { "InsertEnter", "BufReadPost", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
@@ -15,7 +15,7 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
-    
+
     -- Loads vscode style snippets from installed plugins
     require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -26,8 +26,12 @@ return {
         end,
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None"
+        }),
+        documentation = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None"
+        }),
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -37,7 +41,7 @@ return {
         ["<C-space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
-      }), 
+      }),
       -- Sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
@@ -45,7 +49,7 @@ return {
         { name = "buffer" },
         { name = "path" },
       }),
-  
+
       -- Configure lspkind fir vs-code like pictograms in completion menu
       formatting = {
         expandable_indicator = true,
@@ -59,5 +63,8 @@ return {
         ghost_text = true,
       }
     })
+
+    vim.cmd("highlight FloatedBorder guibg=NONE guifg=#e67e80")
+    vim.cmd("highlight BorderBG guibg=NONE guifg=#e67e80")
   end
 }
