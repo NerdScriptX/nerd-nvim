@@ -1,3 +1,6 @@
+vim.opt.textwidth = 85
+vim.opt.wrapmargin = 1
+
 -- Set relative line number
 vim.opt.number = true
 vim.opt.relativenumber = true
